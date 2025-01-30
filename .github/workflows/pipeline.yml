@@ -61,14 +61,14 @@ jobs:
       uses: google-github-actions/setup-gcloud@v2
       with: 
         project_id: ${{ secrets.GCP_PROJECT_ID }}
-    - run: 
+    - run: |
         gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
         gcloud config set run/region ${{ secrets.GCP_REGION }}
         gcloud auth configure-docker
         gcloud info
 
     - name: Run unit test on container
-      run: 
+      run: |
         docker run "gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest" -m unittest --verbose --failfast
 
 
