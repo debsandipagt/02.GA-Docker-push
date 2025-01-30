@@ -1,7 +1,8 @@
 # Chapter 04_03
 
 - Create a repository on GitHub using the [New Repository](https://github.com/new) page.  Name it something that relates to the lesson like `exercise-files`.
-
+- create artifact registry in gcp using
+          gcloud artifacts repositories create gcr.io --repository-format=DOCKER --location=us --description="Google Container Registry Repository"
 - In a terminal, run the following commands to initialize the directory as a git repository.
 
         git init
