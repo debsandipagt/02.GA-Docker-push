@@ -89,7 +89,7 @@ jobs:
         gcloud auth configure-docker
         gcloud info
     - name: Deploy to cloud run
-      run: gcloud run deploy ${{ env.APPLICATION_NAME }} --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --alow-unauthenticated
+      run: gcloud run deploy ${{ env.APPLICATION_NAME }} --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --allow-unauthenticated
 
     - name: Test Deployment
       run: |
